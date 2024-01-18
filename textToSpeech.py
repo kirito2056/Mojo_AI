@@ -1,8 +1,7 @@
 from gtts import gTTS
 
-with open('yuna.txt', 'r', encoding='utf8') as f:
+with open('project.txt', 'r', encoding='utf8') as f:
     text = f.read() 
-
 
 file_name = 'sample.mp3'
 
