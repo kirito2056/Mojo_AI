@@ -7,14 +7,18 @@ with sr.Microphone() as source:
     recognizer.adjust_for_ambient_noise(source)
 
     try:
+        #음성 인식 및 text 변수에 저장
         audio = recognizer.listen(source, timeout=5)
-    except sr.WaitTimeoutError:
-        print("마이크가 당신의 목소리를 못듣고 있는거 같소")
+        text = recognizer.recognize_google(audio, language="ko-KR")
+        print("인식된 텍스트: " + text)
 
-try:
-    text = recognizer.recognize_google(audio, language="ko-KR")
-    print("인식된 텍스트: " + text)
-except sr.UnknownValueError:
-    print("뭐래는겨 똑바로 말해봐")
-except sr.RequestError as e:
-    print(f"이건 구글 오류인디 : {e}")
+    except sr.WaitTimeoutError:
+        print("5초 안에 말하지 않았군")
+        text = None
+    except sr.UnknownValueError:
+        print("뭐래는겨 똑바로 말해봐")
+        text = None
+    except sr.RequestError as e:
+        print(f"이건 구글 오류인디 : {e}")
+        text = None
+
