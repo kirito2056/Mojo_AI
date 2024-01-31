@@ -23,3 +23,13 @@ def answer(input_text):
         answer_text = '아직 개발해야 하는 기능입니다' 
     else:
         answer_text = '다시 한번 말씀해주세요'
+    speak(answer_text)
+
+
+#대답 출력 - Text To Sound
+def speak(text):
+    print('[인공지능] ' + text)
+    file_name = 'voice.mp3'
+    tts = gTTS(text=text, lang='ko')
+    tts.save(file_name)
+    playsound(file_name)
