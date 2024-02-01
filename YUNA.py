@@ -20,7 +20,13 @@ def answer(input_text):
     if '안녕' in input_text:
         answer_text = '안녕하세요? 반갑습니다.'
     elif '날씨' in input_text:
-        answer_text = '아직 개발해야 하는 기능입니다' 
+        if '오늘' in input_text:
+            answer_text = '아직 구현중인 기능이예요'
+        elif '내일' in input_text:
+            answer_text = '내일 날씨는 이렇습니다'
+        elif '월' or '일' in input_text:
+            #text에서 월, 일 앞의 숫자 찾는 알고리즘
+            answer_text = '월 일 날씨는 이렇습니다'
     else:
         answer_text = '다시 한번 말씀해주세요'
     speak(answer_text)
