@@ -43,6 +43,7 @@ def speak(text):
 r = sr.Recognizer()
 m = sr.Microphone()
 
+speak('듣고있어요')
 stop_listening = r.listen_in_background(m, listen)
 
 while True:
