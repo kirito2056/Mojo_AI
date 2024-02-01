@@ -39,3 +39,11 @@ def speak(text):
     tts = gTTS(text=text, lang='ko')
     tts.save(file_name)
     playsound(file_name)
+
+r = sr.Recognizer()
+m = sr.Microphone()
+
+stop_listening = r.listen_in_background(m, listen)
+
+while True:
+    time.sleep(0.1)
