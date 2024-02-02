@@ -1,0 +1,289 @@
+{
+    "forecast200" : [
+        {
+            "id" : 200,
+            "log" : "Thunderstorm with light rain",
+            "status" : "Thunderstorm with light rain"
+        },
+        {
+            "id" : 201,
+            "log" : "Thunderstorm with rain",
+            "status" : "비를 동반한 천둥번개"
+        },
+        {
+            "id" : 202,
+            "log" : "Thunderstorm with heavy rain",
+            "status" : "집중 호우를 동반한 천둥번개"
+        },
+        {
+            "id" : 210,
+            "log" : "Light thunderstorm",
+            "status" : "약한 천둥번개"
+        },
+        {
+            "id" : 211,
+            "log" : "Thunderstorm",
+            "status" : "천둥번개"
+        },
+        {
+            "id" : 212,
+            "log" : "Heavy thunderstorm",
+            "status" : "강한 천둥번개"
+        },
+        {
+            "id" : 221,
+            "log" : "Ragged thunderstorm",
+            "status" : "불규칙적 천둥번개"
+        },
+        {
+            "id" : 230,
+            "log" : "Thunderstorm with light drizzle",
+            "status" : "약한 이슬비를 동반한 천둥번개"
+        },
+        {
+            "id" : 231,
+            "log" : "Thunderstorm with drizzle",
+            "status" : "이슬비를 동반한 천둥번개"
+        },
+        {
+            "id" : 232,
+            "log" : "Thunderstorm with heavy drizzle",
+            "status" : "강한 이슬비를 동반한 천둥번개"
+        }
+    ],
+    "forecast300" : [
+        {
+            "id" : 300,
+            "log" : "Light intensity drizzle",
+            "status" : "약한 강도의 이슬비"
+        },
+        {
+            "id" : 301,
+            "log" : "Drizzle",
+            "status" : "이슬비"
+        },
+        {
+            "id" : 302,
+            "log" : "Heavy intensity drizzle",
+            "status" : "강한 강도의 이슬비"
+        },
+        {
+            "id" : 310,
+            "log" : "Light intensity drizzle rain",
+            "status" : "약한 강도의 이슬비성 비"
+        },
+        {
+            "id" : 311,
+            "log" : "Drizzle rain",
+            "status" : "이슬비성 비"
+        },
+        {
+            "id" : 312,
+            "log" : "Heavy intensity drizzle rain",
+            "status" : "강한 강도의 이슬비성 비"
+        },
+        {
+            "id" : 313,
+            "log" : "Shower rain and drizzle",
+            "status" : "소나기 및 이슬비"
+        },
+        {
+            "id" : 314,
+            "log" : "Heavy shower rain and drizzle",
+            "status" : "강한 소나기 및 이슬비"
+        },
+        {
+            "id" : 321,
+            "log" : "Shower drizzle",
+            "status" : "소나기 이슬비"
+        }
+    ],
+    "forecast500" : [
+        {
+            "id" : 500,
+            "log" : "Light rain",
+            "status" : "약한 비"
+        },
+        {
+            "id" : 501,
+            "log" : "Moderate rain",
+            "status" : "중간 강도의 비"
+        },
+        {
+            "id" : 502,
+            "log" : "Heavy intensity rain",
+            "status" : "강한 강도의 비"
+        },
+        {
+            "id" : 503,
+            "log" : "Very heavy rain",
+            "status" : "매우 강한 비"
+        },
+        {
+            "id" : 504,
+            "log" : "Extreme rain",
+            "status" : "극심한 비"
+        },
+        {
+            "id" : 511,
+            "log" : "Freezing rain",
+            "status" : "얼어붙는 비"
+        },
+        {
+            "id" : 520,
+            "log" : "Light intensity shower rain",
+            "status" : "약한 강도의 소나기"
+        },
+        {
+            "id" : 521,
+            "log" : "Shower rain",
+            "status" : "소나기"
+        },
+        {
+            "id" : 522,
+            "log" : "Heavy intensity shower rain",
+            "status" : "강한 강도의 소나기"
+        },
+        {
+            "id" : 531,
+            "log" : "Ragged shower rain",
+            "status" : "불규칙적 소나기"
+        }
+    ],
+    "forecast600" : [
+        {
+            "id" : 600,
+            "log" : "Light snow",
+            "status" : "가벼운 눈"
+        },
+        {
+            "id" : 601,
+            "log" : "Snow",
+            "status" : "눈"
+        },
+        {
+            "id" : 602,
+            "log" : "Heavy snow",
+            "status" : "강한 눈"
+        },
+        {
+            "id" : 611,
+            "log" : "Sleet",
+            "status" : "진눈깨비"
+        },
+        {
+            "id" : 612,
+            "log" : " Light shower sleetㄴ",
+            "status" : "가벼운 소나기 진눈깨비"
+        },
+        {
+            "id" : 613,
+            "log" : "RShower sleet",
+            "status" : "소나기 진눈깨비"
+        },
+        {
+            "id" : 615,
+            "log" : " Light rain and snow",
+            "status" : "약한 비와 눈4"
+        },
+        {
+            "id" : 616,
+            "log" : "Rain and snow",
+            "status" : "비와 눈"
+        },
+        {
+            "id" : 620,
+            "log" : "Light shower snow",
+            "status" : "가벼운 소나기 눈"
+        },
+        {
+            "id" : 621,
+            "log" : "Shower snow",
+            "status" : "소나기 눈"
+        },
+        {
+            "id" : 622,
+            "log" : "Heavy shower snow",
+            "status" : "강한 소나기 눈"
+        }
+    ],
+    "forecast700" : [
+        {
+            "id" : 701,
+            "log" : "Mist",
+            "status" : "안개"
+        },
+        {
+            "id" : 711,
+            "log" : "Smoke",
+            "status" : "안개"
+        },
+        {
+            "id" : 721,
+            "log" : "Haze",
+            "status" : "실안개"
+        },
+        {
+            "id" : 731,
+            "log" : "Sand/dust whirls",
+            "status" : "모래/먼지 회오리"
+        },
+        {
+            "id" : 741,
+            "log" : "Fog",
+            "status" : "짙은 안개"
+        },
+        {
+            "id" : 751,
+            "log" : "Sand",
+            "status" : "모래"
+        },
+        {
+            "id" : 761,
+            "log" : "Dust",
+            "status" : "먼지"
+        },
+        {
+            "id" : 762,
+            "log" : "Volcanic ash",
+            "status" : "화산재"
+        },
+        {
+            "id" : 771,
+            "log" : "Squalls",
+            "status" : "돌풍"
+        },
+        {
+            "id" : 781,
+            "log" : "Tornado",
+            "status" : "토네이도"
+        }   
+    ],
+    "forecast800" : [
+        {
+            "id" : 800,
+            "log" : "Clear sky",
+            "status" : "맑은 하늘"
+        },
+        {
+            "id" : 801,
+            "log" : "Few clouds",
+            "status" : "구름 조금"
+        },
+        {
+            "id" : 802,
+            "log" : "Scattered clouds",
+            "status" : "조각구름"
+        },
+        {
+            "id" : 803,
+            "log" : "Broken clouds",
+            "status" : "부서진 구름"
+        },
+        {
+            "id" : 804,
+            "log" : "Overcast clouds",
+            "status" : "흐린 구름"
+        } 
+    ]
+}
