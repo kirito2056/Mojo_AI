@@ -13,12 +13,15 @@ def get_weather(api_key, latitude, longitude):
     return response.json()
 
 def weatherText():
-    weather_text = 'I think about you a lot'
-    
+    api_key = "50723333e4cced07bdba598be59049f4"
+    latitude, longitude, city = get_location()
+    weather = get_weather(api_key, latitude, longitude)
 
-latitude, longitude, city = get_location()
-weather = get_weather(api_key, latitude, longitude)
+    print(f"Weather in {city}:")
+    print(weather)
 
+    weather_text = weather
+    return weather_text
 
-print(f"Weather in {city}:")
-print(weather)
+weatherText()
+
