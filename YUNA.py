@@ -25,12 +25,14 @@ def answer(input_text):
         elif '내일' in input_text:
             answer_text = '내일 날씨는 이렇습니다'
         elif '월' or '일' in input_text:
+            if '월요일' in input_text:
+                answer_text = '요일별 날씨는 아직 구현되지 않은 기능입니다'
+                pass
             #text에서 월, 일 앞의 숫자 찾는 알고리즘
             answer_text = '월 일 날씨는 이렇습니다'
     else:
         answer_text = '다시 한번 말씀해주세요'
     speak(answer_text)
-
 
 #대답 출력 - Text To Sound
 def speak(text):
