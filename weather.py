@@ -24,4 +24,3 @@ def weatherText():
     return weather_text
 
 weatherText()
-
