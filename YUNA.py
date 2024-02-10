@@ -46,8 +46,10 @@ def speak(text):
 r = sr.Recognizer()
 m = sr.Microphone()
 
+#백그라운드에서 마이크 사용 설정
 speak('듣고있어요')
 stop_listening = r.listen_in_background(m, listen)
 
+#무한 반복
 while True:
     time.sleep(0.1)
