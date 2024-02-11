@@ -9,8 +9,13 @@ def get_location():
 def get_weather(api_key, latitude, longitude):
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
     complete_url = f"{base_url}appid={api_key}&lat={latitude}&lon={longitude}"
-    response = requests.get(complete_url)
-    return response.json()
+
+    try:
+        response = requests.get(complete_url).json()
+    except requests.exceptions.RequestException as e:
+        return e
+
+    return response
 
 def weatherText():
     api_key = "50723333e4cced07bdba598be59049f4"
