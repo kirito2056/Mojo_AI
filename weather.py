@@ -1,10 +1,22 @@
 import requests
 import json
 
+
 def get_location():
-    response = requests.get("http://ip-api.com/json/")
-    data = response.json()
-    return data['lat'], data['lon'], data['city']
+    API_KEY = 'AIzaSyCfJ9JXotKNNqKpYX9ikQ3tkZB9AWDYfLg'
+
+    url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + API_KEY
+    data = {}
+    response = requests.post(url, json=data)
+    print(response)
+
+    if response.status_code == 200:
+        result = response.json()
+        print("위도:", result['location']['lat'])
+        print("경도:", result['location']['lng'])
+        return result['location']['lat'], result['location']['lng'], '안양'
+    else:
+        print("오류 발생:", response.status_code)
 
 def get_weather(api_key, latitude, longitude):
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -31,15 +43,13 @@ def whatWeather():
     return weather_text
 
 def extract_weather_info(data):
-    if data is None:
-        print("데이터가 없습니다.")
-        return
     weather_info = data['weather'][0]
-    temp_info = data['main'][0]
+#    temp_info = data['main'][0]
     id_value = weather_info['id']
-    temp_value = temp_info - 273.15
+#    temp_value = temp_info - 273.15
     print(f'id: {id_value}')
-    print(f'temp: {temp_value}')
+#    print(f'temp: {temp_value}')
 
+#get_location()
+print(whatWeather())
 
-whatWeather()

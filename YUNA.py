@@ -22,8 +22,7 @@ def answer(input_text):
         answer_text = '안녕하세요? 반갑습니다.'
     elif '날씨' in input_text:
         if '오늘' in input_text:
-            answer_text = '핫스팟에 연결되어있을경우 위치가 특정되지 않을수도 있습니다'
-            answer_text = weather.whatWeather()
+            answer_text = '핫스팟에 연결되어있을경우 위치가 특정되지 않을수도 있습니다' + weather.whatWeather()
         elif '내일' in input_text:
             answer_text = '내일 날씨는 이렇습니다'
         elif '월' or '일' in input_text:
