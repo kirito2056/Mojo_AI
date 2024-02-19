@@ -3,6 +3,7 @@ import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
 import weather
+import sys
 
 #음성 인식 - Sound To Text
 def listen(recognizer, audio):
@@ -32,6 +33,8 @@ def answer(input_text):
                 pass
             #text에서 월, 일 앞의 숫자 찾는 알고리즘
             answer_text = weather.weatherText()
+        elif '저리가'in input_text:
+            sys.exit()
     else:
         answer_text = '다시 한번 말씀해주세요'
     speak(answer_text)
