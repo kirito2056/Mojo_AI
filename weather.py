@@ -8,13 +8,12 @@ def get_location():
     url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + API_KEY
     data = {}
     response = requests.post(url, json=data)
-    print(response)
 
     if response.status_code == 200:
         result = response.json()
-        print("위도:", result['location']['lat'])
-        print("경도:", result['location']['lng'])
-        return result['location']['lat'], result['location']['lng'], '안양'
+#        print("위도:", result['location']['lat'])
+#        print("경도:", result['location']['lng'])
+        return result['location']['lat'], result['location']['lng']
     else:
         print("오류 발생:", response.status_code)
 
@@ -31,27 +30,27 @@ def get_weather(api_key, latitude, longitude):
 
 def whatWeather():
     api_key = "50723333e4cced07bdba598be59049f4"
-    latitude, longitude, city = get_location()
+    latitude, longitude = get_location()
     weather = get_weather(api_key, latitude, longitude)
 
-    print(f"Weather in {city}:")
-    print(weather)
+    print("현재 날씨는 ")
+#    print(weather)
 
-    weather_info(weather)
-    temp_info(weather)
+    weather_id = str(weather_info(weather))
+    temp = str(temp_info(weather))
 
-    weather_text = weather
+    weather_text = weather_id + temp
     return weather_text
 
 def weather_info(data):
     weather_info = data['weather'][0]
     id_value = weather_info['id']
-    print(f'id: {id_value}')
+#    print(f'id: {id_value}')
+    return id_value
 
 def temp_info(data):
     temp_value = data['main']['temp']
-    print(f'temp: {round(temp_value - 273.15, 2)}')
+#    print(f'temp: {round(temp_value - 273.15, 2)}')
 
 #get_location()
-whatWeather()
-
+#whatWeather()

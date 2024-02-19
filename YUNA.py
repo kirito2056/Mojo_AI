@@ -12,6 +12,7 @@ def listen(recognizer, audio):
         answer(text)
     except sr.UnknownValueError:
         print('인식 실패')
+        answer('다시 한번 말씀해주세요')
     except sr.RequestError as e:
         print('요청 실패 : {0}'.format(e))
 
@@ -22,7 +23,7 @@ def answer(input_text):
         answer_text = '안녕하세요? 반갑습니다.'
     elif '날씨' in input_text:
         if '오늘' in input_text:
-            answer_text = '핫스팟에 연결되어있을경우 위치가 특정되지 않을수도 있습니다' + weather.whatWeather()
+            answer_text = '핫스팟에 연결되어있을경우 위치가 특정되지 않을수도 있습니다' + str(weather.whatWeather())
         elif '내일' in input_text:
             answer_text = '내일 날씨는 이렇습니다'
         elif '월' or '일' in input_text:
