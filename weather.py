@@ -37,19 +37,21 @@ def whatWeather():
     print(f"Weather in {city}:")
     print(weather)
 
-    extract_weather_info(weather)
+    weather_info(weather)
+    temp_info(weather)
 
     weather_text = weather
     return weather_text
 
-def extract_weather_info(data):
+def weather_info(data):
     weather_info = data['weather'][0]
-#    temp_info = data['main'][0]
     id_value = weather_info['id']
-#    temp_value = temp_info - 273.15
     print(f'id: {id_value}')
-#    print(f'temp: {temp_value}')
+
+def temp_info(data):
+    temp_value = data['main']['temp']
+    print(f'temp: {round(temp_value - 273.15, 2)}')
 
 #get_location()
-print(whatWeather())
+whatWeather()
 
