@@ -15,4 +15,4 @@ def get_status_from_id(id):
     if status:
         return status
     else:
-        return "해당하는 id에 대한 데이터를 찾을 수 없습니다."
+        return None
