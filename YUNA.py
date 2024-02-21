@@ -2,7 +2,7 @@ import time, os
 import speech_recognition as sr
 from gtts import gTTS
 from playsound import playsound
-import weather
+import whatWhather
 import sys
 
 #음성 인식 - Sound To Text
@@ -24,7 +24,7 @@ def answer(input_text):
         answer_text = '안녕하세요? 반갑습니다.'
     elif '날씨' in input_text:
         if '오늘' in input_text:
-            answer_text = '핫스팟에 연결되어있을경우 위치가 특정되지 않을수도 있습니다' + str(weather.whatWeather())
+            answer_text = '핫스팟에 연결되어있을경우 위치가 특정되지 않을수도 있습니다' + str(whatWhather.whatWeather())
         elif '내일' in input_text:
             answer_text = '내일 날씨는 이렇습니다'
         elif '월' or '일' in input_text:
@@ -32,7 +32,7 @@ def answer(input_text):
                 answer_text = '요일별 날씨는 아직 구현되지 않은 기능입니다'
                 pass
             #text에서 월, 일 앞의 숫자 찾는 알고리즘
-            answer_text = weather.weatherText()
+            answer_text = whatWhather.weatherText()
         elif '저리가'in input_text:
             sys.exit()
     else:
@@ -48,7 +48,7 @@ def speak(text):
     playsound(file_name)
 
 r = sr.Recognizer()
-m = sr.Microphone()
+m = sr.Microphone(energy_threshold=100)
 
 #백그라운드에서 마이크 사용 설정
 speak('듣고있어요')
