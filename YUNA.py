@@ -1,21 +1,9 @@
 import time, os
 import speech_recognition as sr
-from gtts import gTTS
-from playsound import playsound
 import whatWhather
 import sys
-
-#음성 인식 - Sound To Text
-def listen(recognizer, audio):
-    try:
-        text = recognizer.recognize_google(audio, language='ko-KR')
-        print('[사용자] ' + text)
-        answer(text)
-    except sr.UnknownValueError:
-        print('인식 실패')
-        answer('다시 한번 말씀해주세요')
-    except sr.RequestError as e:
-        print('요청 실패 : {0}'.format(e))
+import speechToText
+import textToSpeech
 
 #대답 생성
 def answer(input_text):
@@ -33,26 +21,15 @@ def answer(input_text):
                 pass
             #text에서 월, 일 앞의 숫자 찾는 알고리즘
             answer_text = whatWhather.weatherText()
-        elif '저리가'in input_text:
+        elif '저리가' in input_text:
             sys.exit()
     else:
         answer_text = '다시 한번 말씀해주세요'
-    speak(answer_text)
-
-#대답 출력 - Text To Sound
-def speak(text):
-    print('[인공지능] ' + text)
-    file_name = 'voice.mp3'
-    tts = gTTS(text=text, lang='ko')
-    tts.save(file_name)
-    playsound(file_name)
-
-r = sr.Recognizer()
-m = sr.Microphone(energy_threshold=100)
+    textToSpeech.speak(answer_text)
 
 #백그라운드에서 마이크 사용 설정
-speak('듣고있어요')
-stop_listening = r.listen_in_background(m, listen)
+textToSpeech.speak('듣고있어요')
+stop_listening = r.listen_in_background(m, speechToText.listen)
 
 #무한 반복
 while True:
