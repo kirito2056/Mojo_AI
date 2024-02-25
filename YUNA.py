@@ -92,7 +92,7 @@ def answer(input_text):
                 pass
             #text에서 월, 일 앞의 숫자 찾는 알고리즘
             answer_text = whatWeather()
-        elif '저리가' in input_text:
+    elif '저리가' in input_text:
             sys.exit()
     else:
         answer_text = '다시 한번 말씀해주세요'
