@@ -1,5 +1,5 @@
 import requests
-import readWeatherData
+import YUNA.readWeatherData as readWeatherData
 
 def get_location():
     API_KEY = 'AIzaSyCfJ9JXotKNNqKpYX9ikQ3tkZB9AWDYfLg'

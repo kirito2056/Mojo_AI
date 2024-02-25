@@ -1,8 +1,8 @@
 import time
-import whatWhather
+import YUNA.whatWhather as whatWhather
 import sys
-import speechToText
-import textToSpeech
+import YUNA.speechToText as speechToText
+import YUNA.textToSpeech as textToSpeech
 
 #대답 생성
 def answer(input_text):
