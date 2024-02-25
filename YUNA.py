@@ -1,5 +1,4 @@
-import time, os
-import speech_recognition as sr
+import time
 import whatWhather
 import sys
 import speechToText
@@ -29,7 +28,7 @@ def answer(input_text):
 
 #백그라운드에서 마이크 사용 설정
 textToSpeech.speak('듣고있어요')
-stop_listening = r.listen_in_background(m, speechToText.listen)
+stop_listening = speechToText.speechInText
 
 #무한 반복
 while True:

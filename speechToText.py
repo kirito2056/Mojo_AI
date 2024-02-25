@@ -1,6 +1,7 @@
 import speech_recognition as sr
 
-recognizer = sr.Recognizer()
+r = sr.Recognizer()
+m = sr.Microphone()
 
 def listen(recognizer, audio):
     with sr.Microphone as source:
@@ -13,3 +14,7 @@ def listen(recognizer, audio):
         return '에러 발생 : {0}'.format(e)
     except sr.RequestError as e:
         return '에러 발생 : {0}'.format(e)
+    
+def speechInText():
+    while True:
+        return r.listen_in_background(m, listen)
