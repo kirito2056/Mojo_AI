@@ -8,6 +8,7 @@ import sys
 API_KEY = 'AIzaSyCfJ9JXotKNNqKpYX9ikQ3tkZB9AWDYfLg'
 API_WEATHER_KEY = "50723333e4cced07bdba598be59049f4"
 
+# Functions from 'readWeatherData.py'
 def find_weather_data(id):
     with open('weather.json') as f:
         data = json.load(f)
@@ -25,13 +26,14 @@ def get_status_from_id(id):
     else:
         return None
 
+# Functions from 'textToSpeech.py'
 def speak(text):
     print('[인공지능] ' + text)
-    file_name = 'voice.mp3'
     tts = gTTS(text=text, lang='ko')
-    tts.save(file_name)
-    playsound(file_name)
+    tts.save('voice.mp3')
+    playsound('voice.mp3')
 
+# Functions from 'whatWhather.py'
 def get_location():
     url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + API_KEY
     data = {}
@@ -72,6 +74,7 @@ def whatWeather():
 
     return find_weather_data(weather_id)
 
+# Main answer function
 def answer(input_text):
     answer_text = ''
     if input_text is None:
@@ -80,7 +83,7 @@ def answer(input_text):
         answer_text = '안녕하세요? 반갑습니다.'
     elif '날씨' in input_text:
         if '오늘' in input_text:
-            answer_text = str(whatWeather())
+            answer_text = '핫스팟에 연결되어있을경우 위치가 특정되지 않을수도 있습니다' + str(whatWeather())
         elif '내일' in input_text:
             answer_text = '내일 날씨는 이렇습니다'
         elif '월' or '일' in input_text:
@@ -96,6 +99,7 @@ def answer(input_text):
     
     speak(answer_text)
 
+# Main loop for conversation
 def main():
     recognizer = sr.Recognizer()
     microphone = sr.Microphone()
@@ -109,7 +113,7 @@ def main():
 
         try:
             recognized_text = recognizer.recognize_google(audio, language='ko-KR')
-            print("[ 사용자 ]", recognized_text)
+            print("인식된 텍스트:", recognized_text)
             answer(recognized_text)
         except sr.UnknownValueError:
             print("음성을 인식할 수 없습니다.")
