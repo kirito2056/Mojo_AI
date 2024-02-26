@@ -74,6 +74,11 @@ def whatWeather():
 
     return find_weather_data(weather_id)
 
+def weatherAnswer(temp):
+    if temp < 0:
+        answer_text = "온도 기준을 몇으로 해야할까"
+    return answer_text
+
 # Main answer function
 def answer(input_text):
     answer_text = ''
