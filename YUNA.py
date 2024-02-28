@@ -8,7 +8,6 @@ import sys
 API_KEY = 'AIzaSyCfJ9JXotKNNqKpYX9ikQ3tkZB9AWDYfLg'
 API_WEATHER_KEY = "50723333e4cced07bdba598be59049f4"
 
-# Functions from 'readWeatherData.py'
 def find_weather_data(id):
     with open('weather.json') as f:
         data = json.load(f)
@@ -26,14 +25,12 @@ def get_status_from_id(id):
     else:
         return None
 
-# Functions from 'textToSpeech.py'
 def speak(text):
     print('[인공지능] ' + text)
     tts = gTTS(text=text, lang='ko')
     tts.save('voice.mp3')
     playsound('voice.mp3')
 
-# Functions from 'whatWhather.py'
 def get_location():
     url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + API_KEY
     data = {}
@@ -79,7 +76,6 @@ def weatherAnswer(temp):
         answer_text = "온도 기준을 몇으로 해야할까"
     return answer_text
 
-# Main answer function
 def answer(input_text):
     answer_text = ''
     if input_text is None:
@@ -104,7 +100,6 @@ def answer(input_text):
     
     speak(answer_text)
 
-# Main loop for conversation
 def main():
     recognizer = sr.Recognizer()
     microphone = sr.Microphone()
