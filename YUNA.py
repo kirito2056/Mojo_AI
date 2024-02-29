@@ -68,12 +68,24 @@ def whatWeather():
 
     weather_id = str(weather_info(weather))
     temp = str(temp_info(weather))
+    
+    weatherAnswer(temp)
 
     return find_weather_data(weather_id)
 
 def weatherAnswer(temp):
     if temp < 0:
-        answer_text = "온도 기준을 몇으로 해야할까"
+        answer_text = "추운 날씨네요. 따뜻하게 입고 나가세요"
+    elif 0 <= temp < 10:
+        answer_text = "쌀쌀한 날씨예요. 외투를 챙겨야 할 것 같아요"
+    elif 10 <= temp < 20:
+        answer_text = "서늘한 날씨예요. 가볍게 입고 나가도 좋을거같아요"
+    elif 20 <= temp < 25:
+        answer_text = "시원한 날씨네요. 밖에 나가서 산책하기 딱 좋은 날씨예요"
+    elif 25 <= temp < 30:
+        answer_text = "따뜻한 날씨네요. 햇빛을 즐기기 좋은 하루예요"
+    elif 30 <= temp:
+        answer_text = "더운 날씨예요. 시원하게 입고 나가는게 어떨까요?"
     return answer_text
 
 def answer(input_text):
@@ -90,10 +102,9 @@ def answer(input_text):
         elif '월' or '일' in input_text:
             if '월요일' in input_text:
                 answer_text = '요일별 날씨는 아직 구현되지 않은 기능입니다'
-                pass
-            #text에서 월, 일 앞의 숫자 찾는 알고리즘
             answer_text = whatWeather()
     elif '저리가' in input_text:
+            speak('인공지능을 종료할게요')
             sys.exit()
     else:
         answer_text = '다시 한번 말씀해주세요'
