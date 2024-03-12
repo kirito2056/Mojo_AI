@@ -27,7 +27,7 @@ def get_status_from_id(id):
 
 def speak(text):
     print('[인공지능] ' + text)
-    tts = gTTS(text=text, lang='ko')
+    tts = gTTS(text=text, lang='en')
     tts.save('voice.mp3')
     playsound('voice.mp3')
 
