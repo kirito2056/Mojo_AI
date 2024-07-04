@@ -5,9 +5,6 @@ from gtts import gTTS
 from playsound import playsound
 import sys
 
-API_KEY = 'AIzaSyCfJ9JXotKNNqKpYX9ikQ3tkZB9AWDYfLg'
-API_WEATHER_KEY = "50723333e4cced07bdba598be59049f4"
-
 def find_weather_data(id):
     with open('weather.json') as f:
         data = json.load(f)
